@@ -44,3 +44,57 @@ delete from workforce where salary=39000.80;
 delete from workforce where experience_year=2024;
 
 select*from workforce;
+
+
+
+
+create table software_store(
+software_id int primary key,
+software_name varchar(50) not null,
+software_type char(20),
+price decimal(10,2) not null,
+license_key bigint unique,
+release_date date,
+install_time time,
+last_updated timestamp,
+version_year year,
+software_description text
+);
+
+desc software_store;
+
+insert into software_store values(1,'Photoshop','Editing',2500.50,9876543210,'2020-05-12','09:00:00','2026-05-07 10:15:00',2020,'image editing software');
+insert into software_store values(2,'VS Code','Development',0.00,9123456780,'2019-03-20','10:30:00','2026-05-07 11:00:00',2019,'source code editor');
+insert into software_store values(3,'MySQL','Database',1500.75,9988776655,'2021-07-18','08:45:00','2026-05-07 09:20:00',2021,'database management system');
+insert into software_store values(4,'AutoCAD','Design',5500.90,9871203456,'2018-09-25','10:00:00','2026-05-07 12:10:00',2018,'engineering design software');
+
+insert into software_store values
+(5,'IntelliJ','IDE',3200.45,9012345678,'2022-01-14','09:15:00','2026-05-07 08:55:00',2022,'java development ide'),
+(6,'Eclipse','IDE',0.00,9345678120,'2023-02-11','11:00:00','2026-05-07 01:30:00',2023,'open source ide'),
+(7,'Figma','UIUX',1200.95,9765432108,'2020-11-09','10:30:00','2026-05-07 02:20:00',2020,'ui ux designing tool'),
+(8,'Postman','Testing',800.35,9654321870,'2017-06-05','08:30:00','2026-05-07 03:10:00',2017,'api testing software');
+
+insert into software_store(software_id,software_name,price,license_key) values
+(11,'Canva',500.25,9876543201),
+(12,'PyCharm',4200.75,9123456701),
+(13,'Android Studio',0.00,9988776611),
+(14,'Notepad++',0.00,9345678901);
+
+
+update software_store set software_type='Management' where software_id=1;
+update software_store set price=6500.45 where software_name='AutoCAD';
+update software_store set license_key=9998887776 where software_id=3;
+update software_store set install_time='10:45:00' where software_type='Design';
+update software_store set software_description='advanced java ide' where software_id=5;
+
+delete from software_store where software_id=14;
+delete from software_store where software_name='Android Studio';
+delete from software_store where software_type='IDE';
+delete from software_store where price=0.00;
+delete from software_store where version_year=2024;
+
+select * from software_store;
+
+drop table softeare_store;
+
+

@@ -46,3 +46,51 @@ drop table grocery;
 
 
 desc grocery;
+
+create table shop(
+shop_id int primary key,
+shop_name varchar(50) not null,
+shop_type char(20),
+monthly_income decimal(10,2) not null,
+gst_number bigint unique,
+opening_date date,
+opening_time time,
+last_stock_update timestamp,
+license_year year,
+shop_details text
+);
+
+desc shop;
+
+insert into shop values(1,'Fresh Mart','Grocery',85000.50,9876543210,'2020-05-12','08:00:00','2026-05-07 10:15:00',2020,'daily needs grocery shop');
+insert into shop values(2,'Style Zone','Fashion',65000.75,9123456780,'2019-03-20','09:30:00','2026-05-07 11:00:00',2019,'clothing and accessories');
+insert into shop values(3,'Tech World','Electronics',120000.25,9988776655,'2021-07-18','10:00:00','2026-05-07 09:20:00',2021,'mobile and laptop store');
+insert into shop values(4,'Book Heaven','Books',45000.90,9871203456,'2018-09-25','07:45:00','2026-05-07 12:10:00',2018,'educational books store');
+
+insert into shop values
+(5,'Cake Palace','Bakery',70000.45,9012345678,'2022-01-14','08:15:00','2026-05-07 08:55:00',2022,'cakes and snacks'),
+(6,'Fit Hub','Sports',55000.60,9345678120,'2023-02-11','09:00:00','2026-05-07 01:30:00',2023,'sports equipment shop'),
+(7,'Beauty Care','Cosmetics',60000.95,9765432108,'2020-11-09','10:30:00','2026-05-07 02:20:00',2020,'beauty and skincare products'),
+(8,'Pet Corner','PetShop',40000.35,9654321870,'2017-06-05','09:45:00','2026-05-07 03:10:00',2017,'pet foods and accessories');
+
+insert into shop(shop_id,shop_name,monthly_income,gst_number) values
+(11,'Coffee Point',35000.25,9876543201),
+(12,'Toy Land',42000.75,9123456701),
+(13,'Mobile City',95000.45,9988776611),
+(14,'Gift Gallery',39000.80,9345678901);
+
+update shop set shop_type='SuperMarket' where shop_id=1;
+update shop set monthly_income=130000.45 where shop_name='Tech World';
+update shop set gst_number=9998887776 where shop_id=3;
+update shop set opening_time='11:00:00' where shop_type='Books';
+update shop set shop_details='largest electronics showroom' where shop_id=3;
+
+delete from shop where shop_id=14;
+delete from shop where shop_name='Mobile City';
+delete from shop where shop_type='Sports';
+delete from shop where monthly_income=39000.80;
+delete from shop where license_year=2024;
+
+select * from shop;
+
+drop table shop;
