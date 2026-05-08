@@ -97,4 +97,6 @@ select * from software_store;
 
 drop table softeare_store;
 
+commit;
+
 
