@@ -118,8 +118,11 @@ select * from software_store where not software_type='IDE';
 select * from software_store where not version_year=2020;
 select * from software_store;
 
+select * from software_store;
 drop table software_store;
 
 commit;
+
+rollback;
 
 

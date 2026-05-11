@@ -94,3 +94,44 @@ delete from shop where license_year=2024;
 select * from shop;
 
 drop table shop;
+
+create table facebook(
+userid int primary key,
+name varchar(20),
+age int,
+gender enum('male','femal'),
+bio text,
+active boolean,
+request int
+);
+insert into facebook values(23,'harshitha',21,'female','handle with care',true,78),
+(24,'kusuma',21,'female','nature beauty',false,45),
+(25,'ravi',24,'male','travelling lover',true,120),
+(26,'sneha',22,'female','music addict',true,95),
+(27,'arjun',26,'male','fitness trainer',false,60),
+(28,'pooja',20,'female','photography lover',true,150),
+(29,'kiran',23,'male','food blogger',true,88);
+
+alter table facebook modify gender enum('male','female');
+alter table facebook rename column userid to user_id,rename column name to user_name;
+
+select request as follow_request from facebook;
+
+select * from facebook where age=21 and gender='female';
+select * from facebook where bio='nature beauty' or active=true;
+select *   from  facebook where gender !='female' ;
+select * from facebook where age=26;
+select distinct age from facebook;
+
+select * from facebook where age>21 and active=true;
+select * from facebook where gender='male' or request>100;
+select * from facebook where not active = true;
+select distinct active from facebook;
+
+select distinct age from facebook where request>50 and gender='female';
+select * from facebook where gender='female' or request<80;
+
+
+
+
+select * from facebook;
