@@ -16,7 +16,7 @@ employee_details text
 
 desc workforce;
 
-insert into workforce values(1,'ravi','hr',45000.25,9876543210,'2020-05-12','09:00','2026-05-07 10:15:00',2020,'hr manager');
+insert into workforce values(01,'ravi','hr',45000.25,9876543210,'2020-05-12','09:00','2026-05-07 10:15:00',2020,'hr manager');
 insert into workforce values(2,'meena','sales',38000.75,9123456780,'2019-03-20','09:30','2026-05-07 11:00:00',2019,'sales executive');
 insert into workforce values(3,'arun','admin',52000.50,9988776655,'2021-07-18','08:45','2026-05-07 09:20:00',2021,'admin officer');
 insert into workforce values(4,'kiran','finance',61000.80,9871203456,'2018-09-25','10:00','2026-05-07 12:10:00',2018,'finance analyst');
@@ -43,7 +43,20 @@ delete from workforce where department='support';
 delete from workforce where salary=39000.80;
 delete from workforce where experience_year=2024;
 
+select employee_id,employee_name from workforce;
+select employee_id,employee_name,salary from workforce;
+
+select phone_number as mobile_number,experience_year as experience from  workforce;
+
+select * from  workforce where salary >= 35000 and experience_year  <2023;
+
+select * from workforce where salary >=65000 or department = 'support';
+ 
+ select * from workforce where employee_name != 'arun' ;
+
 select*from workforce;
+
+drop  table workforce;
 
 
 
@@ -63,7 +76,7 @@ software_description text
 
 desc software_store;
 
-insert into software_store values(1,'Photoshop','Editing',2500.50,9876543210,'2020-05-12','09:00:00','2026-05-07 10:15:00',2020,'image editing software');
+insert into software_store values(15,'Photoshop','Editing',2500.50,9876543210,'2020-05-12','09:00:00','2026-05-07 10:15:00',2020,'image editing software');
 insert into software_store values(2,'VS Code','Development',0.00,9123456780,'2019-03-20','10:30:00','2026-05-07 11:00:00',2019,'source code editor');
 insert into software_store values(3,'MySQL','Database',1500.75,9988776655,'2021-07-18','08:45:00','2026-05-07 09:20:00',2021,'database management system');
 insert into software_store values(4,'AutoCAD','Design',5500.90,9871203456,'2018-09-25','10:00:00','2026-05-07 12:10:00',2018,'engineering design software');
@@ -93,9 +106,19 @@ delete from software_store where software_type='IDE';
 delete from software_store where price=0.00;
 delete from software_store where version_year=2024;
 
+select price as cost,software_description as description from software_store;
+
+select * from software_store where price > 1000 and software_type='IDE';
+select * from software_store where software_name='MySQL' and price < 2000;
+
+select * from software_store where software_type='IDE' or software_type='Database';
+select * from software_store where software_id < 3 or software_type='Design';
+
+select * from software_store where not software_type='IDE';
+select * from software_store where not version_year=2020;
 select * from software_store;
 
-drop table softeare_store;
+drop table software_store;
 
 commit;
 
