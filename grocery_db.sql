@@ -93,6 +93,8 @@ delete from shop where license_year=2024;
 
 select * from shop;
 
+rollback;
+
 drop table shop;
 
 create table facebook(
