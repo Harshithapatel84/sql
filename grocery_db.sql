@@ -133,6 +133,12 @@ select distinct active from facebook;
 select distinct age from facebook where request>50 and gender='female';
 select * from facebook where gender='female' or request<80;
 
+select * from facebook where request in (95,60);
+select * from facebook where age between 21 and 34;
+select * from facebook order by request;
+select count(*) from facebook;
+select sum(age) from facebook;
+
 
 
 
