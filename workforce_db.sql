@@ -53,6 +53,47 @@ select * from  workforce where salary >= 35000 and experience_year  <2023;
 select * from workforce where salary >=65000 or department = 'support';
  
  select * from workforce where employee_name != 'arun' ;
+ 
+ select * from workforce where department in ('admin','sales','testing');
+ select * from workforce where experience_year in (2022,2020);
+
+select * from workforce where salary not in (47000.45,72000.35);
+select * from workforce where experience_year not in (2018,2019);
+
+select * from workforce where  joining_date is null;
+select * from workforce where login_time is not null;
+
+select * from workforce where employee_name like "s%";
+select * from workforce where employee_name like "_i%";
+
+select * from workforce where employee_name like "%n";
+select * from workforce where department like "%i__";
+select * from workforce where department like "m%";
+
+select count(*) from workforce;
+select count(salary) from workforce;
+
+select sum(salary) from workforce;
+select avg(salary) from workforce;
+select min(salary) from workforce;
+select max(salary) from workforce;
+
+select * from workforce where salary between 40000 and 50000;
+select * from workforce where login_time between '08' and '9:30';
+select * from workforce where last_update  between '2026-05-07 09:20:00' and '2026-05-07 12:10:00';
+
+select * from workforce order by salary;
+select * from workforce order by salary desc;
+select * from workforce order by experience_year;
+select * from workforce order by experience_year desc;
+
+
+
+
+
+
+
+
 
 select*from workforce;
 
