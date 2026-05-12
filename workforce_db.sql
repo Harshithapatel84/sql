@@ -87,14 +87,6 @@ select * from workforce order by salary desc;
 select * from workforce order by experience_year;
 select * from workforce order by experience_year desc;
 
-
-
-
-
-
-
-
-
 select*from workforce;
 
 drop  table workforce;
