@@ -139,7 +139,36 @@ select * from facebook order by request;
 select count(*) from facebook;
 select sum(age) from facebook;
 
+select gender,count(*) from facebook group by gender;
 
-
+select request,count(*) from facebook group by request having request>30;
 
 select * from facebook;
+
+create table item(
+name varchar(20),
+price double,
+quantity int,
+expiery_date date);
+
+insert into item values('milk',50,5,'2026-05-12'),
+('biscuit',100,10,'2025-07-15'),
+('egg',7,20,'2026-08-12');
+
+create table product(
+name varchar(25),
+price double,
+mfg_date date,
+quantity int,
+brand varchar(10),
+description text);
+
+insert into product values('mango',45,'2026-05-16',3,'raspuri','sweet mango'),
+('milk',50,'2026-05-12',5,'nandini','healthy fat contain'),
+('egg',20,'2026-08-12',7,'farm','protein rich'),
+('lotion',500,'2025-04-18',5,'nivea','moisturize skin');
+
+
+select * from item cross join product;
+
+select * from item inner join product where item.name=product.name;

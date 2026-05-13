@@ -89,6 +89,8 @@ select * from workforce order by experience_year desc;
 
 select*from workforce;
 
+select salary,count(*) from workforce group by salary  having salary>45000.25;
+
 drop  table workforce;
 
 
